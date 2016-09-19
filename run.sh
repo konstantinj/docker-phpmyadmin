@@ -7,7 +7,7 @@ init_config() {
   echo "<?php">/config/__config.php
   for e in $(env); do
     case $e in
-      PA_*)
+      PMA_*)
         e1=$(expr "$e" : 'PMA_\([A-Z_]*\)')
         e2=$(expr "$e" : '\([A-Z_]*\)')
         echo "\$cfg['${e1,,}'] = getenv('$e2');">>/config/__config.php

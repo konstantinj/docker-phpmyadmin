@@ -26,7 +26,7 @@ sudo docker run \
   konjak/phpmyadmin
 ```
 
-All provided env vars starting with PA\_ will be converted to config values for postfixadmin.
+All provided env vars starting with PMA\_ will be converted to config values for postfixadmin.
 
 It's also possible to mount a folder with php config files to `/config`. All \*.php files in this folder will be executed after the base config.
 

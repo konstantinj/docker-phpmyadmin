@@ -1,7 +1,8 @@
-FROM alpine
+FROM php:alpine
 MAINTAINER Konstantin Jakobi <konstantin.jakobi@gmail.com>
 
-RUN apk add --no-cache bash curl php-cli php-mysqli php-ctype php-xml php-gd php-zlib php-openssl php-curl php-opcache php-json \
+RUN docker-php-ext-install mysqli \
+ && apk add --no-cache bash \
  && curl --location https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-english.tar.gz | tar xzf - \
  && mv phpMyAdmin* /www \
  && rm -rf /www/js/jquery/src/ /www/examples /www/po/ \
